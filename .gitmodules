@@ -1,0 +1,3 @@
+[submodule "JONTUTimeTable"]
+	path = JONTUTimeTable
+	url = http://github.com/echoz/JONTUTimeTable.git
