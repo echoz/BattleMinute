@@ -16,6 +16,7 @@
 		3FE9C5281213ACC50045D70F /* JONTUCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9C5221213ACC50045D70F /* JONTUCourse.m */; };
 		3FE9C5291213ACC50045D70F /* JONTUSemester.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9C5241213ACC50045D70F /* JONTUSemester.m */; };
 		3FE9C52A1213ACC50045D70F /* NSString+htmlentitiesaddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9C5261213ACC50045D70F /* NSString+htmlentitiesaddition.m */; };
+		3FE9C5B91213D0430045D70F /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE9C5B81213D0430045D70F /* BWToolkitFramework.framework */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -45,6 +46,7 @@
 		3FE9C5241213ACC50045D70F /* JONTUSemester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JONTUSemester.m; path = JONTUTimeTable/JONTUSemester.m; sourceTree = "<group>"; };
 		3FE9C5251213ACC50045D70F /* NSString+htmlentitiesaddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+htmlentitiesaddition.h"; path = "JONTUTimeTable/NSString+htmlentitiesaddition.h"; sourceTree = "<group>"; };
 		3FE9C5261213ACC50045D70F /* NSString+htmlentitiesaddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+htmlentitiesaddition.m"; path = "JONTUTimeTable/NSString+htmlentitiesaddition.m"; sourceTree = "<group>"; };
+		3FE9C5B81213D0430045D70F /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BWToolkitFramework.framework; path = ../../Development/BWToolkit/BWToolkitFramework.framework; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* BattleMinute-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BattleMinute-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* BattleMinute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BattleMinute.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -56,6 +58,7 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				3FB121E2120D9DD400B10CDF /* libicucore.dylib in Frameworks */,
+				3FE9C5B91213D0430045D70F /* BWToolkitFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +138,7 @@
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 				3FB121E1120D9DD400B10CDF /* libicucore.dylib */,
+				3FE9C5B81213D0430045D70F /* BWToolkitFramework.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -267,6 +271,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Development/BWToolkit\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -284,6 +292,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Development/BWToolkit\"",
+				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BattleMinute_Prefix.pch;
