@@ -10,10 +10,11 @@
 
 @implementation BattleMinuteAppDelegate
 
-@synthesize window;
+@synthesize window, loginWindow;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	// Insert code here to initialize your application 
+
 }
 
 @end

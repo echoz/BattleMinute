@@ -10,8 +10,10 @@
 
 @interface BattleMinuteAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
+	NSWindow *loginWindow;
 }
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSWindow *loginWindow;
 
 @end
