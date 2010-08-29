@@ -28,14 +28,17 @@
 	NSLog(@"%@", currentlySelectedItem);
 }
 -(IBAction)getSemesters:(id)sender {
-	NSArray *test = [[JONTUSemester listSemestersOfUser:[loginUser stringValue] password:[loginPassword stringValue] domain:@"STUDENT"] retain];
+	NSArray *test = [[JONTUSemester listSemestersOfUser:[loginUser stringValue] password:[loginPassword stringValue] domain:@"STUDENT" parseImmediately:YES] retain];
 	
 	if (test) {
 		[NSApp endSheet:loginWindow];
 		[loginWindow orderOut:sender];
 		
 		[semesterArrayController setContent:test];
+		[semesterArrayController setSelectionIndex:1];
+		[semesterArrayController arrangedObjects];
 	}
+	[test release];
 }
 
 @end
