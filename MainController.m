@@ -13,7 +13,7 @@
 @synthesize window, progressWindow, loginWindow;
 @synthesize progressDescription, progressProgressIndicator;
 @synthesize loginUser, loginPassword, loginDomain, loginButton;
-@synthesize semesterArrayController,currentlySelectedItem;
+@synthesize semesterArrayController;
 
 -(void)awakeFromNib {
 
@@ -25,7 +25,7 @@
 	}
 }
 -(IBAction)test:(id)sender {
-	NSLog(@"%@", currentlySelectedItem);
+	NSLog(@"%@", [[semesterArrayController selection] valueForKey:@"self"]);
 }
 -(IBAction)getSemesters:(id)sender {
 	NSArray *test = [[JONTUSemester listSemestersOfUser:[loginUser stringValue] password:[loginPassword stringValue] domain:@"STUDENT" parseImmediately:YES] retain];
@@ -35,8 +35,6 @@
 		[loginWindow orderOut:sender];
 		
 		[semesterArrayController setContent:test];
-		[semesterArrayController setSelectionIndex:1];
-		[semesterArrayController arrangedObjects];
 	}
 	[test release];
 }

@@ -23,7 +23,6 @@
 	NSButton *loginButton;
 	
 	NSArrayController *semesterArrayController;
-	id currentlySelectedItem;
 }
 
 @property (assign) IBOutlet NSWindow *window;
@@ -39,7 +38,6 @@
 @property (assign) IBOutlet NSButton *loginButton;
 
 @property (assign) IBOutlet NSArrayController *semesterArrayController;
-@property (assign) id currentlySelectedItem;
 -(IBAction)getSemesters:(id)sender;
 -(IBAction)test:(id)sender;
 @end
