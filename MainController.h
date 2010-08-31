@@ -21,6 +21,10 @@
 	NSTextField *loginPassword;
 	NSTextField *loginDomain;
 	NSButton *loginButton;
+	NSButton *loginCancelButton;
+	NSProgressIndicator *loginSpinner;
+	
+	NSPopUpButton *semselect;
 	
 	NSArrayController *semesterArrayController;
 }
@@ -36,8 +40,12 @@
 @property (assign) IBOutlet NSTextField *loginPassword;
 @property (assign) IBOutlet NSTextField *loginDomain;
 @property (assign) IBOutlet NSButton *loginButton;
+@property (assign) IBOutlet NSButton *loginCancelButton;
+@property (assign) IBOutlet NSProgressIndicator *loginSpinner;
+
+@property (assign) IBOutlet NSPopUpButton *semselect;
 
 @property (assign) IBOutlet NSArrayController *semesterArrayController;
 -(IBAction)getSemesters:(id)sender;
--(IBAction)test:(id)sender;
+-(IBAction)quit:(id)sender;
 @end

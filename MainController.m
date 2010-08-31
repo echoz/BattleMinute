@@ -12,11 +12,16 @@
 
 @synthesize window, progressWindow, loginWindow;
 @synthesize progressDescription, progressProgressIndicator;
-@synthesize loginUser, loginPassword, loginDomain, loginButton;
-@synthesize semesterArrayController;
+@synthesize loginUser, loginPassword, loginDomain, loginButton, loginCancelButton, loginSpinner;
+@synthesize semesterArrayController, semselect;
 
 -(void)awakeFromNib {
 
+}
+
+-(BOOL)windowShouldClose:(id)sender {
+	[NSApp terminate:sender];
+	return YES;
 }
 
 -(void)windowDidBecomeMain:(NSNotification *)notification {
@@ -24,10 +29,18 @@
 		[NSApp beginSheet:loginWindow modalForWindow:window modalDelegate:nil didEndSelector:nil contextInfo:nil];
 	}
 }
--(IBAction)test:(id)sender {
-	NSLog(@"%@", [[semesterArrayController selection] valueForKey:@"self"]);
+-(IBAction)quit:(id)sender {
+	[NSApp endSheet:loginWindow];
+	[loginWindow orderOut:sender];
+	[NSApp terminate:sender];
 }
+
+
 -(IBAction)getSemesters:(id)sender {
+	[loginButton setEnabled:NO];
+	[loginCancelButton setEnabled:NO];
+	[loginSpinner startAnimation:sender];
+	 
 	NSArray *test = [[JONTUSemester listSemestersOfUser:[loginUser stringValue] password:[loginPassword stringValue] domain:@"STUDENT" parseImmediately:YES] retain];
 	
 	if (test) {
@@ -35,6 +48,10 @@
 		[loginWindow orderOut:sender];
 		
 		[semesterArrayController setContent:test];
+	} else {
+		[loginButton setEnabled:YES];
+		[loginCancelButton setEnabled:YES];
+		[loginSpinner stopAnimation:sender];
 	}
 	[test release];
 }
