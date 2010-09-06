@@ -8,6 +8,7 @@
 
 #import "MainController.h"
 #import <CalendarStore/CalendarStore.h>
+#import "JONTUSemesterDates.h"
 
 @implementation MainController
 
@@ -15,6 +16,7 @@
 @synthesize progressDescription, progressProgressIndicator;
 @synthesize loginUser, loginPassword, loginDomain, loginButton, loginCancelButton, loginSpinner, loginStatus;
 @synthesize semesterArrayController, calendarArrayController, semselect ,calselect;
+@synthesize firstDay, recess;
 
 -(void)awakeFromNib {
 	[calendarArrayController setContent:[[CalCalendarStore defaultCalendarStore] calendars]];
@@ -44,13 +46,30 @@
 	[win orderOut:sender];
 }
 
--(void)exportSemester:(JONTUSemester *)sem toCalendar:(CalCalendar *)cal {
+-(void)exportSemester:(JONTUSemester *)sem toCalendar:(CalCalendar *)cal usingDates:(NSDictionary *)dates {
+	[progressDescription setStringValue:@"Begin export to iCal"];
+
+	// export logic here
+
+}
+
+-(IBAction)selectDates:(id)sender {
+	[self dismissSheet:additionalOptionsWindow sender:sender];
+	[NSApp beginSheet:progressWindow modalForWindow:window modalDelegate:nil didEndSelector:nil contextInfo:nil];
+	[progressProgressIndicator startAnimation:sender];
+	
+	NSMutableDictionary *dates = [NSMutableDictionary dictionary];
+	[dates setObject:firstDay forKey:@"SEM_START"];
+	[dates setObject:recess forKey:@"RECESS_START"];
+	[self exportSemester:[[semesterArrayController selectedObjects] objectAtIndex:0] 
+			  toCalendar:inputCal 
+			  usingDates:[semdates semesterWithCode:[[[semesterArrayController selectedObjects] objectAtIndex:0] semester]]];
 	
 }
 
 -(IBAction)exportToiCal:(id)sender {
 	// lets do some checking
-	if (([semselect indexOfSelectedItem] > -1) && (![[calselect stringValue] isEqualToString:@""])) {
+	if (([semselect indexOfSelectedItem] > -1) && (![[calselect stringValue] isEqualToString:@""]) && ([[[[semesterArrayController selectedObjects] objectAtIndex:0] courses] count] > 0)) {
 		CalCalendar *inputCal;
 		
 		if ([calselect indexOfSelectedItem] < 0) {
@@ -62,15 +81,44 @@
 			inputCal = [[calendarArrayController arrangedObjects] objectAtIndex:[calselect indexOfSelectedItem]];
 		}
 		
-		
 		//create shit here.
-		NSLog(@"%@",[[[semesterArrayController selectedObjects] objectAtIndex:0] courses]);
-		[NSApp beginSheet:additionalOptionsWindow modalForWindow:window modalDelegate:nil didEndSelector:nil contextInfo:nil];
+		[NSApp beginSheet:progressWindow modalForWindow:window modalDelegate:nil didEndSelector:nil contextInfo:nil];
+		[progressProgressIndicator startAnimation:sender];
+		[progressDescription setStringValue:@"Attempting to autodetect semester dates"];
+		
+		
+		NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+		NSBlockOperation *blockop = [NSBlockOperation blockOperationWithBlock:^{
+			JONTUSemesterDates *semdates = [[JONTUSemesterDates alloc] initWithYear:[[[semesterArrayController selectedObjects] objectAtIndex:0] year]];
+			[semdates parse];
+			
+			if ([[semdates semesterWithCode:[[[semesterArrayController selectedObjects] objectAtIndex:0] semester]] count] > 0) {
+				
+				// autodetected semester dates								
+				[self exportSemester:[[semesterArrayController selectedObjects] objectAtIndex:0] 
+						  toCalendar:inputCal 
+						  usingDates:[semdates semesterWithCode:[[[semesterArrayController selectedObjects] objectAtIndex:0] semester]]];
+				
+			} else {
+				// no autodetect
+				[self dismissSheet:progressWindow sender:sender];
+				[firstDay setDateValue:[NSDate date]];
+				[recess setDateValue:[NSDate date]];
+				[NSApp beginSheet:additionalOptionsWindow modalForWindow:window modalDelegate:nil didEndSelector:nil contextInfo:nil];
+			}
+			
+			[semdates release];
+		}];
+
+		[queue addOperation:blockop];
+		[queue release];
 	
 	} else {
 		NSString *alertstring = nil;
 		
-		if (([semselect indexOfSelectedItem] < 0) && ([[calselect stringValue] isEqualToString:@""])) {
+		if ([[[[semesterArrayController selectedObjects] objectAtIndex:0] courses] count] == 0) {
+			alertstring = @"Current semester has no courses to be exported";
+		} else if (([semselect indexOfSelectedItem] < 0) && ([[calselect stringValue] isEqualToString:@""])) {
 			alertstring = @"Please make sure you have selected a semester to export as well as a calendar to export to.";
 		} else if ([semselect indexOfSelectedItem] < 0) {
 			alertstring = @"Please make sure you have selected a semester to export.";

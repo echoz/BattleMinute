@@ -29,6 +29,9 @@
 	NSPopUpButton *semselect;
 	NSComboBox *calselect;
 	
+	NSDatePicker *firstDay;
+	NSDatePicker *recess;
+	
 	NSArrayController *semesterArrayController;
 	NSArrayController *calendarArrayController;
 	NSArray *calenders;
@@ -53,11 +56,15 @@
 @property (assign) IBOutlet NSPopUpButton *semselect;
 @property (assign) IBOutlet NSComboBox *calselect;
 
+@property (assign) IBOutlet NSDatePicker *firstDay;
+@property (assign) IBOutlet NSDatePicker *recess;
+
 @property (assign) IBOutlet NSArrayController *semesterArrayController;
 @property (assign) IBOutlet NSArrayController *calendarArrayController;
 -(IBAction)getSemesters:(id)sender;
 -(IBAction)quit:(id)sender;
 -(IBAction)closeAdditionalOptions:(id)sender;
 -(IBAction)exportToiCal:(id)sender;
+-(IBAction)selectDates:(id)sender;
 -(void)dismissSheet:(NSWindow *)win sender:(id)sender;
 @end

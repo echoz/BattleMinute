@@ -508,7 +508,7 @@
 				<nil key="NSViewClass"/>
 				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
 				<object class="NSView" key="NSWindowView" id="644550433">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -517,7 +517,6 @@
 							<int key="NSvFlags">261</int>
 							<string key="NSFrame">{{20, 80}, {265, 22}}</string>
 							<reference key="NSSuperview" ref="644550433"/>
-							<reference key="NSWindow"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="291933057">
 								<int key="NSCellFlags">-1804468671</int>
@@ -541,7 +540,6 @@
 							<int key="NSvFlags">261</int>
 							<string key="NSFrame">{{20, 50}, {265, 22}}</string>
 							<reference key="NSSuperview" ref="644550433"/>
-							<reference key="NSWindow"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSSecureTextFieldCell" key="NSCell" id="890868434">
 								<int key="NSCellFlags">343014976</int>
@@ -564,7 +562,6 @@
 							<int key="NSvFlags">261</int>
 							<string key="NSFrame">{{210, 18}, {75, 25}}</string>
 							<reference key="NSSuperview" ref="644550433"/>
-							<reference key="NSWindow"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="958158193">
 								<int key="NSCellFlags">67239424</int>
@@ -585,7 +582,6 @@
 							<int key="NSvFlags">261</int>
 							<string key="NSFrame">{{127, 18}, {75, 25}}</string>
 							<reference key="NSSuperview" ref="644550433"/>
-							<reference key="NSWindow"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="474426480">
 								<int key="NSCellFlags">67239424</int>
@@ -606,7 +602,6 @@
 							<int key="NSvFlags">261</int>
 							<string key="NSFrame">{{71, 110}, {163, 17}}</string>
 							<reference key="NSSuperview" ref="644550433"/>
-							<reference key="NSWindow"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="337648446">
 								<int key="NSCellFlags">68288064</int>
@@ -624,7 +619,6 @@
 							<object class="NSPSMatrix" key="NSDrawMatrix"/>
 							<string key="NSFrame">{{20, 23}, {16, 16}}</string>
 							<reference key="NSSuperview" ref="644550433"/>
-							<reference key="NSWindow"/>
 							<int key="NSpiFlags">28938</int>
 							<double key="NSMaxValue">100</double>
 						</object>
@@ -633,7 +627,6 @@
 							<int key="NSvFlags">-2147483380</int>
 							<string key="NSFrame">{{17, 23}, {105, 17}}</string>
 							<reference key="NSSuperview" ref="644550433"/>
-							<reference key="NSWindow"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="173040712">
 								<int key="NSCellFlags">68288064</int>
@@ -650,8 +643,6 @@
 						</object>
 					</object>
 					<string key="NSFrameSize">{305, 147}</string>
-					<reference key="NSSuperview"/>
-					<reference key="NSWindow"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1920, 1058}}</string>
 				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
@@ -1552,6 +1543,30 @@
 						<reference key="destination" ref="285176480"/>
 					</object>
 					<int key="connectionID">1185</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">firstDay</string>
+						<reference key="source" ref="979954772"/>
+						<reference key="destination" ref="200741099"/>
+					</object>
+					<int key="connectionID">1186</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">recess</string>
+						<reference key="source" ref="979954772"/>
+						<reference key="destination" ref="313430241"/>
+					</object>
+					<int key="connectionID">1187</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">selectDates:</string>
+						<reference key="source" ref="979954772"/>
+						<reference key="destination" ref="287548669"/>
+					</object>
+					<int key="connectionID">1190</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -2457,7 +2472,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1185</int>
+			<int key="maxID">1190</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -2513,9 +2528,11 @@
 							<string>exportToiCal:</string>
 							<string>getSemesters:</string>
 							<string>quit:</string>
+							<string>selectDates:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -2530,6 +2547,7 @@
 							<string>exportToiCal:</string>
 							<string>getSemesters:</string>
 							<string>quit:</string>
+							<string>selectDates:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -2549,6 +2567,10 @@
 								<string key="name">quit:</string>
 								<string key="candidateClassName">id</string>
 							</object>
+							<object class="IBActionInfo">
+								<string key="name">selectDates:</string>
+								<string key="candidateClassName">id</string>
+							</object>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
@@ -2558,6 +2580,7 @@
 							<string>additionalOptionsWindow</string>
 							<string>calendarArrayController</string>
 							<string>calselect</string>
+							<string>firstDay</string>
 							<string>loginButton</string>
 							<string>loginCancelButton</string>
 							<string>loginDomain</string>
@@ -2569,6 +2592,7 @@
 							<string>progressDescription</string>
 							<string>progressProgressIndicator</string>
 							<string>progressWindow</string>
+							<string>recess</string>
 							<string>semesterArrayController</string>
 							<string>semselect</string>
 							<string>window</string>
@@ -2578,6 +2602,7 @@
 							<string>NSWindow</string>
 							<string>NSArrayController</string>
 							<string>NSComboBox</string>
+							<string>NSDatePicker</string>
 							<string>NSButton</string>
 							<string>NSButton</string>
 							<string>NSTextField</string>
@@ -2589,6 +2614,7 @@
 							<string>NSTextField</string>
 							<string>NSProgressIndicator</string>
 							<string>NSWindow</string>
+							<string>NSDatePicker</string>
 							<string>NSArrayController</string>
 							<string>NSPopUpButton</string>
 							<string>NSWindow</string>
@@ -2601,6 +2627,7 @@
 							<string>additionalOptionsWindow</string>
 							<string>calendarArrayController</string>
 							<string>calselect</string>
+							<string>firstDay</string>
 							<string>loginButton</string>
 							<string>loginCancelButton</string>
 							<string>loginDomain</string>
@@ -2612,6 +2639,7 @@
 							<string>progressDescription</string>
 							<string>progressProgressIndicator</string>
 							<string>progressWindow</string>
+							<string>recess</string>
 							<string>semesterArrayController</string>
 							<string>semselect</string>
 							<string>window</string>
@@ -2629,6 +2657,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">calselect</string>
 								<string key="candidateClassName">NSComboBox</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">firstDay</string>
+								<string key="candidateClassName">NSDatePicker</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">loginButton</string>
@@ -2673,6 +2705,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">progressWindow</string>
 								<string key="candidateClassName">NSWindow</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">recess</string>
+								<string key="candidateClassName">NSDatePicker</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">semesterArrayController</string>
