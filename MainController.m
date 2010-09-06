@@ -49,12 +49,12 @@
 }
 
 -(NSUInteger)maxWeeksForSemester:(JONTUSemester *)sem {
-	int max = 0;
+	NSUInteger max = 0;
 	
-	for (int i=0;i<[[sem courses] count];i++) {
-		for (int j=0;i<[[[[sem courses] objectAtIndex:i] classes] count];j++) {
-			if ([[[[[[sem courses] objectAtIndex:i] classes] objectAtIndex:j] activeWeeks] count] > max) {
-				max = [[[[[[sem courses] objectAtIndex:i] classes] objectAtIndex:j] activeWeeks] count];
+	for (JONTUCourse *cse in [sem courses]) {
+		for (JONTUClass *cls in [cse classes]) {
+			if ([[cls activeWeeks] count] > max) {
+				max = [[cls activeWeeks] count];
 			}
 		}
 	}
@@ -67,6 +67,8 @@
 	NSUInteger maxWeeks = [self maxWeeksForSemester:sem];
 	[progressProgressIndicator setMaxValue:maxWeeks];
 
+	NSLog(@"Max Weeks: %i", maxWeeks);
+	
 	// export logic here
 	// 1. find out maximum number of weeks
 	// 2. iterate through the monday of each week to find dates
