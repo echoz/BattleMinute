@@ -86,7 +86,7 @@
 	[dates setObject:recess forKey:@"RECESS_START"];
 	CalCalendar *inputCal;
 	
-	if ([calselect indexOfSelectedItem] < 0) {
+	if ([calselect indexOfSelectedItem] < -1) {
 		inputCal = [CalCalendar calendar];
 		inputCal.title = [calselect stringValue];
 		
@@ -106,7 +106,7 @@
 	if (([semselect indexOfSelectedItem] > -1) && (![[calselect stringValue] isEqualToString:@""]) && ([[[[semesterArrayController selectedObjects] objectAtIndex:0] courses] count] > 0)) {
 		CalCalendar *inputCal;
 		
-		if ([calselect indexOfSelectedItem] < 0) {
+		if ([calselect indexOfSelectedItem] < -1) {
 			inputCal = [CalCalendar calendar];
 			inputCal.title = [calselect stringValue];
 			
