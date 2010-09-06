@@ -9,6 +9,7 @@
 #import "MainController.h"
 #import <CalendarStore/CalendarStore.h>
 #import "JONTUSemesterDates.h"
+#import "JONTUSemester.h"
 #import "JONTUCourse.h"
 #import "JONTUClass.h"
 
@@ -61,21 +62,108 @@
 	return max;
 }
 
+- (BOOL)date:(NSDate*)date isBetweenDate:(NSDate*)beginDate andDate:(NSDate*)endDate
+{
+    if ([date compare:beginDate] == NSOrderedAscending)
+        return NO;
+	
+    if ([date compare:endDate] == NSOrderedDescending) 
+        return NO;
+	
+    return YES;
+}
+
 -(void)exportSemester:(JONTUSemester *)sem toCalendar:(CalCalendar *)cal usingDates:(NSDictionary *)dates {
+	// basic assumptions.
+	// - school always starts on a monday.
+	// - recess is for a week if not otherwise stated
+	// - monday starts with index 0 since school always starts on a monday
+	
+	[[CalCalendarStore defaultCalendarStore] saveCalendar:cal error:nil];
+	
 	[progressDescription setStringValue:@"Begin export to iCal"];
 	
 	NSUInteger maxWeeks = [self maxWeeksForSemester:sem];
-	[progressProgressIndicator setMaxValue:maxWeeks];
-
-	NSLog(@"Max Weeks: %i", maxWeeks);
+	[progressProgressIndicator setMaxValue:maxWeeks+1];
+	[progressProgressIndicator setIndeterminate:NO];
 	
-	// export logic here
-	// 1. find out maximum number of weeks
-	// 2. iterate through the monday of each week to find dates
-	// 3. add shit in
-	// 4. create events and save them
-	// 5. save calendar
+	NSCalendar *calendar = [NSCalendar currentCalendar];
+	NSDate *baseStartDate = [dates objectForKey:@"SEM_START"];
+	
+	NSDate *recessStartDate = [dates objectForKey:@"RECESS_START"];
+	NSDate *recessEndDate = [dates objectForKey:@"RECESS_END"];
 
+	if (!recessEndDate) {
+		NSDateComponents *offset = [[NSDateComponents alloc] init];
+		[offset setDay:5];
+		recessEndDate = [calendar dateByAddingComponents:offset toDate:recessStartDate options:0];
+		[offset release];
+	}
+	
+	NSDateComponents *offset = nil;
+	NSDate *currentWeekDate = nil;
+	int modifier = 0;
+	BOOL process = 0;
+
+	for (int i=0;i<maxWeeks+1;i++) {
+		offset = [[NSDateComponents alloc] init];
+		[offset setDay:i*7];
+		currentWeekDate = [calendar dateByAddingComponents:offset toDate:baseStartDate options:0];
+		[progressProgressIndicator incrementBy:1];
+		 
+		if (![self date:currentWeekDate isBetweenDate:recessStartDate andDate:recessEndDate]) {
+			[progressDescription setStringValue:[NSString stringWithFormat:@"Working on week %i",i+1-modifier]];
+			for (JONTUCourse *cse in [sem courses]) {
+				for (JONTUClass *cls in [cse classes]) {
+					
+					if ([[cls activeWeeks] count] < maxWeeks) {
+						if (i < [[cls activeWeeks] count]) {
+							process = [[[cls activeWeeks] objectAtIndex:i-modifier] boolValue];	
+						} else {
+							process = NO;
+						}
+					} else {
+						process = [[[cls activeWeeks] objectAtIndex:i-modifier] boolValue];
+					}
+					
+					if (process) {
+						CalEvent *event = [CalEvent event];
+						event.calendar = cal;
+						event.title = [NSString stringWithFormat:@"%@ %@", [cse name], [cls type]];
+						event.location = [cls venue];
+						event.notes = [NSString stringWithFormat:@"%i AU %@ %@\nStatus: %@\n\nIndex: %@\nGroup: %@\nRemark: %@",[cse au], [cse type], [cse gepre], [cse status], [cse index], [cls group], [cls remark]];
+						
+						NSDateComponents *tmpoffset;
+						
+						tmpoffset = [cls fromTime];
+						[tmpoffset setDay:[tmpoffset weekday]];
+						[tmpoffset setWeekday:0];
+						
+						event.startDate = [calendar dateByAddingComponents:tmpoffset toDate:currentWeekDate options:0];
+
+						tmpoffset = [cls toTime];
+						[tmpoffset setDay:[tmpoffset weekday]];
+						[tmpoffset setWeekday:0];
+
+						event.endDate = [calendar dateByAddingComponents:tmpoffset toDate:currentWeekDate options:0];
+
+						[[CalCalendarStore defaultCalendarStore] saveEvent:event span:CalSpanThisEvent error:nil];						
+					}						
+					
+				}
+			}
+		} else {
+			[progressDescription setStringValue:@"Working on Recess Week"];
+
+			modifier++;
+		}	
+	
+		[offset release], offset = nil;
+	}
+	[self dismissSheet:progressWindow sender:nil];
+	
+	[[CalCalendarStore defaultCalendarStore] saveCalendar:cal error:nil];
+	
 }
 
 -(IBAction)selectDates:(id)sender {
@@ -88,7 +176,7 @@
 	[dates setObject:recess forKey:@"RECESS_START"];
 	CalCalendar *inputCal;
 	
-	if ([calselect indexOfSelectedItem] < -1) {
+	if ([calselect indexOfSelectedItem] < 0) {
 		inputCal = [CalCalendar calendar];
 		inputCal.title = [calselect stringValue];
 		
@@ -108,7 +196,7 @@
 	if (([semselect indexOfSelectedItem] > -1) && (![[calselect stringValue] isEqualToString:@""]) && ([[[[semesterArrayController selectedObjects] objectAtIndex:0] courses] count] > 0)) {
 		CalCalendar *inputCal;
 		
-		if ([calselect indexOfSelectedItem] < -1) {
+		if ([calselect indexOfSelectedItem] < 0) {
 			inputCal = [CalCalendar calendar];
 			inputCal.title = [calselect stringValue];
 			
