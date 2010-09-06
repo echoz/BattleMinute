@@ -9,6 +9,8 @@
 #import "MainController.h"
 #import <CalendarStore/CalendarStore.h>
 #import "JONTUSemesterDates.h"
+#import "JONTUCourse.h"
+#import "JONTUClass.h"
 
 @implementation MainController
 
@@ -46,10 +48,31 @@
 	[win orderOut:sender];
 }
 
+-(NSUInteger)maxWeeksForSemester:(JONTUSemester *)sem {
+	int max = 0;
+	
+	for (int i=0;i<[[sem courses] count];i++) {
+		for (int j=0;i<[[[[sem courses] objectAtIndex:i] classes] count];j++) {
+			if ([[[[[[sem courses] objectAtIndex:i] classes] objectAtIndex:j] activeWeeks] count] > max) {
+				max = [[[[[[sem courses] objectAtIndex:i] classes] objectAtIndex:j] activeWeeks] count];
+			}
+		}
+	}
+	return max;
+}
+
 -(void)exportSemester:(JONTUSemester *)sem toCalendar:(CalCalendar *)cal usingDates:(NSDictionary *)dates {
 	[progressDescription setStringValue:@"Begin export to iCal"];
+	
+	NSUInteger maxWeeks = [self maxWeeksForSemester:sem];
+	[progressProgressIndicator setMaxValue:maxWeeks];
 
 	// export logic here
+	// 1. find out maximum number of weeks
+	// 2. iterate through the monday of each week to find dates
+	// 3. add shit in
+	// 4. create events and save them
+	// 5. save calendar
 
 }
 
@@ -61,9 +84,20 @@
 	NSMutableDictionary *dates = [NSMutableDictionary dictionary];
 	[dates setObject:firstDay forKey:@"SEM_START"];
 	[dates setObject:recess forKey:@"RECESS_START"];
-	[self exportSemester:[[semesterArrayController selectedObjects] objectAtIndex:0] 
+	CalCalendar *inputCal;
+	
+	if ([calselect indexOfSelectedItem] < 0) {
+		inputCal = [CalCalendar calendar];
+		inputCal.title = [calselect stringValue];
+		
+	} else {
+		// set inputcal to the one that is selected
+		inputCal = [[calendarArrayController arrangedObjects] objectAtIndex:[calselect indexOfSelectedItem]];
+	}
+	
+	[self exportSemester:[[semesterArrayController selectedObjects] objectAtIndex:0]
 			  toCalendar:inputCal 
-			  usingDates:[semdates semesterWithCode:[[[semesterArrayController selectedObjects] objectAtIndex:0] semester]]];
+			  usingDates:dates];
 	
 }
 
