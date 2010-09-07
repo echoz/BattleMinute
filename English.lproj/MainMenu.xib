@@ -13,7 +13,6 @@
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<integer value="372"/>
-			<integer value="950"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -747,7 +746,7 @@
 				<nil key="NSViewClass"/>
 				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
 				<object class="NSView" key="NSWindowView" id="560427302">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<object class="NSMutableArray" key="NSSubviews">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -895,7 +894,6 @@
 						</object>
 					</object>
 					<string key="NSFrameSize">{337, 300}</string>
-					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1920, 1058}}</string>
 				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
@@ -1237,7 +1235,7 @@
 						<string key="label">content: arrangedObjects</string>
 						<reference key="source" ref="592711476"/>
 						<reference key="destination" ref="120977251"/>
-						<object class="NSNibBindingConnector" key="connector" id="694416203">
+						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="592711476"/>
 							<reference key="NSDestination" ref="120977251"/>
 							<string key="NSLabel">content: arrangedObjects</string>
@@ -1247,43 +1245,6 @@
 						</object>
 					</object>
 					<int key="connectionID">1011</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: representedObject.name</string>
-						<reference key="source" ref="877958710"/>
-						<reference key="destination" ref="327858933"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="877958710"/>
-							<reference key="NSDestination" ref="327858933"/>
-							<string key="NSLabel">value: representedObject.name</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">representedObject.name</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">1032</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">selectionIndexes: selectionIndexes</string>
-						<reference key="source" ref="592711476"/>
-						<reference key="destination" ref="120977251"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="592711476"/>
-							<reference key="NSDestination" ref="120977251"/>
-							<string key="NSLabel">selectionIndexes: selectionIndexes</string>
-							<string key="NSBinding">selectionIndexes</string>
-							<string key="NSKeyPath">selectionIndexes</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSRaisesForNotApplicableKeys</string>
-								<boolean value="NO" key="NS.object.0"/>
-							</object>
-							<reference key="NSPreviousConnector" ref="694416203"/>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">1083</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -1567,6 +1528,43 @@
 						<reference key="destination" ref="287548669"/>
 					</object>
 					<int key="connectionID">1190</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">selectionArrayController</string>
+						<reference key="source" ref="979954772"/>
+						<reference key="destination" ref="120977251"/>
+					</object>
+					<int key="connectionID">1191</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: representedObject.name</string>
+						<reference key="source" ref="877958710"/>
+						<reference key="destination" ref="327858933"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="877958710"/>
+							<reference key="NSDestination" ref="327858933"/>
+							<string key="NSLabel">value: representedObject.name</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">representedObject.name</string>
+							<object class="NSDictionary" key="NSOptions">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<object class="NSArray" key="dict.sortedKeys">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<string>NSAllowsEditingMultipleValuesSelection</string>
+									<string>NSRaisesForNotApplicableKeys</string>
+								</object>
+								<object class="NSMutableArray" key="dict.values">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<boolean value="NO"/>
+									<boolean value="NO"/>
+								</object>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1193</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -2472,7 +2470,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1190</int>
+			<int key="maxID">1197</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -2529,9 +2527,11 @@
 							<string>getSemesters:</string>
 							<string>quit:</string>
 							<string>selectDates:</string>
+							<string>showFirstSelection:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -2548,6 +2548,7 @@
 							<string>getSemesters:</string>
 							<string>quit:</string>
 							<string>selectDates:</string>
+							<string>showFirstSelection:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -2569,6 +2570,10 @@
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">selectDates:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">showFirstSelection:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 						</object>
@@ -2593,6 +2598,7 @@
 							<string>progressProgressIndicator</string>
 							<string>progressWindow</string>
 							<string>recess</string>
+							<string>selectionArrayController</string>
 							<string>semesterArrayController</string>
 							<string>semselect</string>
 							<string>window</string>
@@ -2615,6 +2621,7 @@
 							<string>NSProgressIndicator</string>
 							<string>NSWindow</string>
 							<string>NSDatePicker</string>
+							<string>NSArrayController</string>
 							<string>NSArrayController</string>
 							<string>NSPopUpButton</string>
 							<string>NSWindow</string>
@@ -2640,6 +2647,7 @@
 							<string>progressProgressIndicator</string>
 							<string>progressWindow</string>
 							<string>recess</string>
+							<string>selectionArrayController</string>
 							<string>semesterArrayController</string>
 							<string>semselect</string>
 							<string>window</string>
@@ -2709,6 +2717,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">recess</string>
 								<string key="candidateClassName">NSDatePicker</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">selectionArrayController</string>
+								<string key="candidateClassName">NSArrayController</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">semesterArrayController</string>

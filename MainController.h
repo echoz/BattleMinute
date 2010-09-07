@@ -34,6 +34,7 @@
 	
 	NSArrayController *semesterArrayController;
 	NSArrayController *calendarArrayController;
+	NSArrayController *selectionArrayController;
 	NSArray *calenders;
 }
 
@@ -61,10 +62,13 @@
 
 @property (assign) IBOutlet NSArrayController *semesterArrayController;
 @property (assign) IBOutlet NSArrayController *calendarArrayController;
+@property (assign) IBOutlet NSArrayController *selectionArrayController;
 -(IBAction)getSemesters:(id)sender;
 -(IBAction)quit:(id)sender;
 -(IBAction)closeAdditionalOptions:(id)sender;
 -(IBAction)exportToiCal:(id)sender;
 -(IBAction)selectDates:(id)sender;
 -(void)dismissSheet:(NSWindow *)win sender:(id)sender;
+
+-(void)showFirstSelection:(id)sender;
 @end

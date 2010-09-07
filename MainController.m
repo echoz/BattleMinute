@@ -18,7 +18,7 @@
 @synthesize window, progressWindow, loginWindow,additionalOptionsWindow;
 @synthesize progressDescription, progressProgressIndicator;
 @synthesize loginUser, loginPassword, loginDomain, loginButton, loginCancelButton, loginSpinner, loginStatus;
-@synthesize semesterArrayController, calendarArrayController, semselect ,calselect;
+@synthesize semesterArrayController, calendarArrayController, selectionArrayController, semselect ,calselect;
 @synthesize firstDay, recess;
 
 -(void)awakeFromNib {
@@ -261,6 +261,14 @@
 	}
 }
 
+-(void)showFirstSelection:(id)sender {	
+	
+	NSLog(@"first blood");
+	[selectionArrayController setContent:nil];
+	[selectionArrayController rearrangeObjects];
+	[selectionArrayController setContent:[[[semesterArrayController selection] valueForKey:@"self"] courses]];
+	[selectionArrayController rearrangeObjects];
+}
 
 -(IBAction)getSemesters:(id)sender {
 	[loginButton setEnabled:NO];
@@ -277,7 +285,12 @@
 		if (test) {
 			[self dismissSheet:loginWindow sender:sender];
 						
-			[semesterArrayController setContent:test];
+			[semesterArrayController setContent:test];			
+			[semesterArrayController rearrangeObjects];
+			[semesterArrayController setSelectionIndex:0];
+
+			[self performSelectorOnMainThread:@selector(showFirstSelection:) withObject:nil waitUntilDone:NO];
+			
 		} else {
 			[loginButton setEnabled:YES];
 			[loginCancelButton setEnabled:YES];
