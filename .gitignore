@@ -7,3 +7,4 @@ build/revision
 *.xcodeproj/*.tm_build_errors
 *.tmproj
 *.1
+*.pem

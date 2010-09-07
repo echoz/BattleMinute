@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		256AC3DA0F4B6AC300CF3369 /* BattleMinuteAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* BattleMinuteAppDelegate.m */; };
+		3F10B98812367E360084B7E6 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F10B98712367E360084B7E6 /* Sparkle.framework */; };
+		3F10B99712367E5D0084B7E6 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3F10B98712367E360084B7E6 /* Sparkle.framework */; };
+		3F10B99C12367FFD0084B7E6 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 3F10B99B12367FFD0084B7E6 /* dsa_pub.pem */; };
 		3F41402712336EC900CB5E2C /* CalendarStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F41402612336EC900CB5E2C /* CalendarStore.framework */; };
 		3F4140551233E3D500CB5E2C /* JONTUSemesterDates.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4140541233E3D500CB5E2C /* JONTUSemesterDates.m */; };
 		3F79C98912280467009F9DD7 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F79C98812280467009F9DD7 /* MainController.m */; };
@@ -24,6 +27,19 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3F10B99A12367E650084B7E6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3F10B99712367E5D0084B7E6 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
@@ -35,6 +51,8 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		3F10B98712367E360084B7E6 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		3F10B99B12367FFD0084B7E6 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		3F41402612336EC900CB5E2C /* CalendarStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CalendarStore.framework; path = System/Library/Frameworks/CalendarStore.framework; sourceTree = SDKROOT; };
 		3F4140531233E3D500CB5E2C /* JONTUSemesterDates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JONTUSemesterDates.h; path = JONTUTimeTable/JONTUSemesterDates.h; sourceTree = "<group>"; };
 		3F4140541233E3D500CB5E2C /* JONTUSemesterDates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JONTUSemesterDates.m; path = JONTUTimeTable/JONTUSemesterDates.m; sourceTree = "<group>"; };
@@ -65,6 +83,7 @@
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				3FB121E2120D9DD400B10CDF /* libicucore.dylib in Frameworks */,
 				3F41402712336EC900CB5E2C /* CalendarStore.framework in Frameworks */,
+				3F10B98812367E360084B7E6 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +104,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3F10B98712367E360084B7E6 /* Sparkle.framework */,
 				3F41402612336EC900CB5E2C /* CalendarStore.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
@@ -134,6 +154,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3F10B99B12367FFD0084B7E6 /* dsa_pub.pem */,
 				8D1107310486CEB800E47090 /* BattleMinute-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
@@ -198,6 +219,7 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
+				3F10B99A12367E650084B7E6 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -242,6 +264,7 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+				3F10B99C12367FFD0084B7E6 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +318,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Development/BWToolkit\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -316,6 +340,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Development/BWToolkit\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -346,6 +371,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
