@@ -19,7 +19,7 @@
 	NSProgressIndicator *progressProgressIndicator;
 	
 	NSTextField *loginUser;
-	NSTextField *loginPassword;
+	NSSecureTextField *loginPassword;
 	NSTextField *loginDomain;
 	NSTextField *loginStatus;	
 	NSButton *loginButton;
@@ -47,7 +47,7 @@
 @property (assign) IBOutlet NSProgressIndicator *progressProgressIndicator;
 
 @property (assign) IBOutlet NSTextField *loginUser;
-@property (assign) IBOutlet NSTextField *loginPassword;
+@property (assign) IBOutlet NSSecureTextField *loginPassword;
 @property (assign) IBOutlet NSTextField *loginDomain;
 @property (assign) IBOutlet NSTextField *loginStatus;
 @property (assign) IBOutlet NSButton *loginButton;
