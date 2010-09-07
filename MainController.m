@@ -241,13 +241,13 @@
 		NSString *alertstring = nil;
 		
 		if ([[[[semesterArrayController selectedObjects] objectAtIndex:0] courses] count] == 0) {
-			alertstring = @"Current semester has no courses to be exported";
+			alertstring = @"Current semester has no courses to be exported.";
 		} else if (([semselect indexOfSelectedItem] < 0) && ([[calselect stringValue] isEqualToString:@""])) {
-			alertstring = @"Please make sure you have selected a semester to export as well as a calendar to export to.";
+			alertstring = @"Please make sure you have selected a semester to export as well as a calendar or entered the name of a new calendar to create and export to.";
 		} else if ([semselect indexOfSelectedItem] < 0) {
 			alertstring = @"Please make sure you have selected a semester to export.";
 		} else if ([[calselect stringValue] isEqualToString:@""]) {
-			alertstring = @"Please make sure you have selected a calendar to export to.";
+			alertstring = @"Please make sure you have selected a calendar or entered the name of a new calendar to create and export to.";
 		}
 		
 		
@@ -262,8 +262,6 @@
 }
 
 -(void)showFirstSelection:(id)sender {	
-	
-	NSLog(@"first blood");
 	[selectionArrayController setContent:nil];
 	[selectionArrayController rearrangeObjects];
 	[selectionArrayController setContent:[[[semesterArrayController selection] valueForKey:@"self"] courses]];
