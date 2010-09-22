@@ -11,7 +11,7 @@
 							http://echoz.github.com/BattleMinute/1.0.1.html
 						</sparkle:releaseNotesLink>
             <pubDate>Thu, 23 Sep 2010 01:27:11 +0800</pubDate>
-            <enclosure url="http://echoz.github.com/BattleMinute/BattleMinute1.0.1.zip" sparkle:version="1.0.1" length="606478" type="application/octet-stream" sparkle:dsaSignature="MCwCFCxpTln7R7HIR/HwZk2+D10jQuYqAhR7ZmhK4UG9kGu5cZGcu0imY5LN+g==" />
+            <enclosure url="http://echoz.github.com/BattleMinute/BattleMinute1.0.1.zip" sparkle:version="1.0.1" length="606481" type="application/octet-stream" sparkle:dsaSignature="MC0CFQCHPpqkPbldTV6Y5HP64LEqiUx4QQIUGRKOwOmbZijeeZFgwTghKXeTM/8=" />
          </item>
    </channel>
 </rss>
