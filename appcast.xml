@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+   <channel>
+      <title>BattleMinute</title>
+      <link>http://echoz.github.com/BattleMinute/appcast.xml</link>
+      <description>Latest update to BattleMinute</description>
+      <language>en</language>
+         <item>
+            <title>Version 1.0.1 (2 bugs fixed; 0 new features)</title>
+						<sparkle:releaseNotesLink>
+							http://echoz.github.com/BattleMinute/1.0.1.html
+						</sparkle:releaseNotesLink>
+            <pubDate>Thu, 23 Sep 2010 01:27:11 +0800</pubDate>
+            <enclosure url="http://echoz.github.com/BattleMinute/BattleMinute1.0.1.zip" sparkle:version="1.0.1" length="606478" type="application/octet-stream" sparkle:dsaSignature="MCwCFCxpTln7R7HIR/HwZk2+D10jQuYqAhR7ZmhK4UG9kGu5cZGcu0imY5LN+g==" />
+         </item>
+   </channel>
+</rss>
