@@ -5,6 +5,15 @@
       <link>http://echoz.github.com/BattleMinute/appcast.xml</link>
       <description>Latest update to BattleMinute</description>
       <language>en</language>
+      <item>
+         <title>Version 1.0.2 (1 bugs fixed; 0 new features)</title>
+						<sparkle:releaseNotesLink>
+							http://echoz.github.com/BattleMinute/1.0.1.html
+						</sparkle:releaseNotesLink>
+         <pubDate>Thu, 23 Sep 2010 11:59:11 +0800</pubDate>
+         <enclosure url="http://echoz.github.com/BattleMinute/BattleMinute1.0.2.zip" sparkle:version="1.0.2" length="606687" type="application/octet-stream" sparkle:dsaSignature="MCwCFDLBR+TuzL6leWhVK4WLYFiWO+neAhRm6EsmPYadWu+yRUCwBIzafP2xxw==" />
+      </item>
+
          <item>
             <title>Version 1.0.1 (2 bugs fixed; 0 new features)</title>
 						<sparkle:releaseNotesLink>
