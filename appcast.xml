@@ -10,8 +10,8 @@
 						<sparkle:releaseNotesLink>
 							http://echoz.github.com/BattleMinute/1.0.2.html
 						</sparkle:releaseNotesLink>
-         <pubDate>Thu, 23 Sep 2010 11:59:11 +0800</pubDate>
-         <enclosure url="http://echoz.github.com/BattleMinute/BattleMinute1.0.2.zip" sparkle:version="3" length="606687" type="application/octet-stream" sparkle:dsaSignature="MCwCFDLBR+TuzL6leWhVK4WLYFiWO+neAhRm6EsmPYadWu+yRUCwBIzafP2xxw==" />
+         <pubDate>Thu, 23 Sep 2010 18:33:11 +0800</pubDate>
+         <enclosure url="http://echoz.github.com/BattleMinute/BattleMinute1.0.2.zip" sparkle:version="4" length="607091" type="application/octet-stream" sparkle:dsaSignature="MCwCFFsSflXP1fOZO66oTj7ZxkxA7wb4AhQ74LEcvCt4MvMCAqV0c95GYuEhDg==" />
       </item>
 
    </channel>
