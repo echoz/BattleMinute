@@ -22,6 +22,8 @@
 		3FE9C5281213ACC50045D70F /* JONTUCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9C5221213ACC50045D70F /* JONTUCourse.m */; };
 		3FE9C5291213ACC50045D70F /* JONTUSemester.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9C5241213ACC50045D70F /* JONTUSemester.m */; };
 		3FE9C52A1213ACC50045D70F /* NSString+htmlentitiesaddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9C5261213ACC50045D70F /* NSString+htmlentitiesaddition.m */; };
+		3FFD50E1124A6D1D00572AEB /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FFD50DE124A6D1D00572AEB /* GTMNSString+HTML.m */; };
+		3FFD50E2124A6D1D00572AEB /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FFD50E0124A6D1D00572AEB /* NSString+HTML.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -71,6 +73,11 @@
 		3FE9C5241213ACC50045D70F /* JONTUSemester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JONTUSemester.m; path = JONTUTimeTable/JONTUSemester.m; sourceTree = "<group>"; };
 		3FE9C5251213ACC50045D70F /* NSString+htmlentitiesaddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+htmlentitiesaddition.h"; path = "JONTUTimeTable/NSString+htmlentitiesaddition.h"; sourceTree = "<group>"; };
 		3FE9C5261213ACC50045D70F /* NSString+htmlentitiesaddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+htmlentitiesaddition.m"; path = "JONTUTimeTable/NSString+htmlentitiesaddition.m"; sourceTree = "<group>"; };
+		3FFD50DC124A6D1D00572AEB /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMDefines.h; path = JONTUTimeTable/JONTUAuth/MWFeedParser/Classes/GTMDefines.h; sourceTree = "<group>"; };
+		3FFD50DD124A6D1D00572AEB /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GTMNSString+HTML.h"; path = "JONTUTimeTable/JONTUAuth/MWFeedParser/Classes/GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		3FFD50DE124A6D1D00572AEB /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GTMNSString+HTML.m"; path = "JONTUTimeTable/JONTUAuth/MWFeedParser/Classes/GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		3FFD50DF124A6D1D00572AEB /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+HTML.h"; path = "JONTUTimeTable/JONTUAuth/MWFeedParser/Classes/NSString+HTML.h"; sourceTree = "<group>"; };
+		3FFD50E0124A6D1D00572AEB /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+HTML.m"; path = "JONTUTimeTable/JONTUAuth/MWFeedParser/Classes/NSString+HTML.m"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* BattleMinute-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BattleMinute-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* BattleMinute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BattleMinute.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -188,6 +195,11 @@
 				3FE9C5181213ACB10045D70F /* JONTUAuth.m */,
 				3FE9C5191213ACB10045D70F /* RegexKitLite.h */,
 				3FE9C51A1213ACB10045D70F /* RegexKitLite.m */,
+				3FFD50DC124A6D1D00572AEB /* GTMDefines.h */,
+				3FFD50DD124A6D1D00572AEB /* GTMNSString+HTML.h */,
+				3FFD50DE124A6D1D00572AEB /* GTMNSString+HTML.m */,
+				3FFD50DF124A6D1D00572AEB /* NSString+HTML.h */,
+				3FFD50E0124A6D1D00572AEB /* NSString+HTML.m */,
 			);
 			name = JONTUAuth;
 			sourceTree = "<group>";
@@ -285,6 +297,8 @@
 				3FE9C52A1213ACC50045D70F /* NSString+htmlentitiesaddition.m in Sources */,
 				3F79C98912280467009F9DD7 /* MainController.m in Sources */,
 				3F4140551233E3D500CB5E2C /* JONTUSemesterDates.m in Sources */,
+				3FFD50E1124A6D1D00572AEB /* GTMNSString+HTML.m in Sources */,
+				3FFD50E2124A6D1D00572AEB /* NSString+HTML.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

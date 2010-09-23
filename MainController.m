@@ -269,16 +269,20 @@
 }
 
 -(IBAction)getSemesters:(id)sender {
+
+	NSString *loginpasswd = [loginPassword stringValue];
+	
 	[loginButton setEnabled:NO];
 	[loginCancelButton setEnabled:NO];
 	[loginUser setEnabled:NO];
 	[loginPassword setEnabled:NO];
+
 	[loginSpinner startAnimation:sender];
-	[loginStatus setHidden:YES];	
+	[loginStatus setHidden:YES];
 	
 	NSOperationQueue *queue = [[NSOperationQueue alloc] init];
 	NSBlockOperation *blockop = [NSBlockOperation blockOperationWithBlock:^{
-		NSArray *test = [[JONTUSemester listSemestersOfUser:[loginUser stringValue] password:[loginPassword stringValue] domain:@"STUDENT" parseImmediately:YES] retain];
+		NSArray *test = [[JONTUSemester listSemestersOfUser:[loginUser stringValue] password:loginpasswd domain:@"STUDENT" parseImmediately:YES] retain];
 		
 		if (test) {
 			[self dismissSheet:loginWindow sender:sender];
