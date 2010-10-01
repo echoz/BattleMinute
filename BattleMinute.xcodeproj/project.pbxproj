@@ -347,7 +347,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
 					"-force_load",
-					"EdventurousFramework/build/Release/libEdventurous-OSX.a",
+					"EdventurousFramework/build/${BUILD_STYLE}/libEdventurous-OSX.a",
 				);
 				PRODUCT_NAME = BattleMinute;
 			};
@@ -367,7 +367,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
 					"-force_load",
-					"EdventurousFramework/build/Release/libEdventurous-OSX.a",
+					"EdventurousFramework/build/${BUILD_STYLE}/libEdventurous-OSX.a",
 				);
 				PRODUCT_NAME = BattleMinute;
 			};
