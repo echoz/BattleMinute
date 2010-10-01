@@ -13,7 +13,7 @@
 		3F10B99712367E5D0084B7E6 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3F10B98712367E360084B7E6 /* Sparkle.framework */; };
 		3F10B99C12367FFD0084B7E6 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 3F10B99B12367FFD0084B7E6 /* dsa_pub.pem */; };
 		3F41402712336EC900CB5E2C /* CalendarStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F41402612336EC900CB5E2C /* CalendarStore.framework */; };
-		3F5EDEF41256640900FF2D80 /* libEdventurous-OSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5EDEEF125663D900FF2D80 /* libEdventurous-OSX.a */; };
+		3F6B170012566E7C00BE45A1 /* libEdventurous-OSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F6B16FB12566E6000BE45A1 /* libEdventurous-OSX.a */; };
 		3F79C98912280467009F9DD7 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F79C98812280467009F9DD7 /* MainController.m */; };
 		3FB121E2120D9DD400B10CDF /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB121E1120D9DD400B10CDF /* libicucore.dylib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -22,32 +22,32 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3F5EDEEC125663D900FF2D80 /* PBXContainerItemProxy */ = {
+		3F6B16F812566E6000BE45A1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3F5EDEE2125663D900FF2D80 /* Edventurous.xcodeproj */;
+			containerPortal = 3F6B16EE12566E6000BE45A1 /* Edventurous.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 3F5EDCFB12564C9100FF2D80 /* libEdventurous-Device.a */;
+			remoteGlobalIDString = 3F5EDCFB12564C9100FF2D80;
 			remoteInfo = "Edventurous-Device";
 		};
-		3F5EDEEE125663D900FF2D80 /* PBXContainerItemProxy */ = {
+		3F6B16FA12566E6000BE45A1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3F5EDEE2125663D900FF2D80 /* Edventurous.xcodeproj */;
+			containerPortal = 3F6B16EE12566E6000BE45A1 /* Edventurous.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 3F5EDD1812564D7600FF2D80 /* libEdventurous-OSX.a */;
+			remoteGlobalIDString = 3F5EDD1812564D7600FF2D80;
 			remoteInfo = "Edventurous-OSX";
 		};
-		3F5EDEF0125663D900FF2D80 /* PBXContainerItemProxy */ = {
+		3F6B16FC12566E6000BE45A1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3F5EDEE2125663D900FF2D80 /* Edventurous.xcodeproj */;
+			containerPortal = 3F6B16EE12566E6000BE45A1 /* Edventurous.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 3F5EDD9512564F8100FF2D80 /* libEdventurous-Simulator.a */;
+			remoteGlobalIDString = 3F5EDD9512564F8100FF2D80;
 			remoteInfo = "Edventurous-Simulator";
 		};
-		3F5EDEF2125663F800FF2D80 /* PBXContainerItemProxy */ = {
+		3F6B16FE12566E7100BE45A1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3F5EDEE2125663D900FF2D80 /* Edventurous.xcodeproj */;
+			containerPortal = 3F6B16EE12566E6000BE45A1 /* Edventurous.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 3F5EDD1712564D7600FF2D80 /* Edventurous-OSX */;
+			remoteGlobalIDString = 3F5EDD1712564D7600FF2D80;
 			remoteInfo = "Edventurous-OSX";
 		};
 /* End PBXContainerItemProxy section */
@@ -77,10 +77,10 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		3F10B98712367E360084B7E6 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		3F10B98712367E360084B7E6 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Frameworks/Sparkle.framework; sourceTree = "<group>"; };
 		3F10B99B12367FFD0084B7E6 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		3F41402612336EC900CB5E2C /* CalendarStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CalendarStore.framework; path = System/Library/Frameworks/CalendarStore.framework; sourceTree = SDKROOT; };
-		3F5EDEE2125663D900FF2D80 /* Edventurous.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Edventurous.xcodeproj; path = ../Framework/Edventurous/Edventurous.xcodeproj; sourceTree = SOURCE_ROOT; };
+		3F6B16EE12566E6000BE45A1 /* Edventurous.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Edventurous.xcodeproj; path = EdventurousFramework/Edventurous.xcodeproj; sourceTree = "<group>"; };
 		3F79C98712280467009F9DD7 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		3F79C98812280467009F9DD7 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 		3FB121E1120D9DD400B10CDF /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
@@ -93,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F5EDEF41256640900FF2D80 /* libEdventurous-OSX.a in Frameworks */,
+				3F6B170012566E7C00BE45A1 /* libEdventurous-OSX.a in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				3FB121E2120D9DD400B10CDF /* libicucore.dylib in Frameworks */,
 				3F41402712336EC900CB5E2C /* CalendarStore.framework in Frameworks */,
@@ -146,7 +146,7 @@
 		29B97314FDCFA39411CA2CEA /* BattleMinute */ = {
 			isa = PBXGroup;
 			children = (
-				3F5EDEE2125663D900FF2D80 /* Edventurous.xcodeproj */,
+				3F6B16EE12566E6000BE45A1 /* Edventurous.xcodeproj */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -186,12 +186,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3F5EDEE3125663D900FF2D80 /* Products */ = {
+		3F6B16EF12566E6000BE45A1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3F5EDEED125663D900FF2D80 /* libEdventurous-Device.a */,
-				3F5EDEEF125663D900FF2D80 /* libEdventurous-OSX.a */,
-				3F5EDEF1125663D900FF2D80 /* libEdventurous-Simulator.a */,
+				3F6B16F912566E6000BE45A1 /* libEdventurous-Device.a */,
+				3F6B16FB12566E6000BE45A1 /* libEdventurous-OSX.a */,
+				3F6B16FD12566E6000BE45A1 /* libEdventurous-Simulator.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -211,7 +211,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				3F5EDEF3125663F800FF2D80 /* PBXTargetDependency */,
+				3F6B16FF12566E7100BE45A1 /* PBXTargetDependency */,
 			);
 			name = BattleMinute;
 			productInstallPath = "$(HOME)/Applications";
@@ -241,8 +241,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 3F5EDEE3125663D900FF2D80 /* Products */;
-					ProjectRef = 3F5EDEE2125663D900FF2D80 /* Edventurous.xcodeproj */;
+					ProductGroup = 3F6B16EF12566E6000BE45A1 /* Products */;
+					ProjectRef = 3F6B16EE12566E6000BE45A1 /* Edventurous.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -253,25 +253,25 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		3F5EDEED125663D900FF2D80 /* libEdventurous-Device.a */ = {
+		3F6B16F912566E6000BE45A1 /* libEdventurous-Device.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libEdventurous-Device.a";
-			remoteRef = 3F5EDEEC125663D900FF2D80 /* PBXContainerItemProxy */;
+			remoteRef = 3F6B16F812566E6000BE45A1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3F5EDEEF125663D900FF2D80 /* libEdventurous-OSX.a */ = {
+		3F6B16FB12566E6000BE45A1 /* libEdventurous-OSX.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libEdventurous-OSX.a";
-			remoteRef = 3F5EDEEE125663D900FF2D80 /* PBXContainerItemProxy */;
+			remoteRef = 3F6B16FA12566E6000BE45A1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3F5EDEF1125663D900FF2D80 /* libEdventurous-Simulator.a */ = {
+		3F6B16FD12566E6000BE45A1 /* libEdventurous-Simulator.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libEdventurous-Simulator.a";
-			remoteRef = 3F5EDEF0125663D900FF2D80 /* PBXContainerItemProxy */;
+			remoteRef = 3F6B16FC12566E6000BE45A1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -303,10 +303,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3F5EDEF3125663F800FF2D80 /* PBXTargetDependency */ = {
+		3F6B16FF12566E7100BE45A1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Edventurous-OSX";
-			targetProxy = 3F5EDEF2125663F800FF2D80 /* PBXContainerItemProxy */;
+			targetProxy = 3F6B16FE12566E7100BE45A1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -335,23 +335,19 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../Development/BWToolkit\"",
-					"\"$(SRCROOT)\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "Frameworks/**";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BattleMinute_Prefix.pch;
+				HEADER_SEARCH_PATHS = "EdventurousFramework/Classes/**";
 				INFOPLIST_FILE = "BattleMinute-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
 					"-force_load",
-					"/Users/jeremy/Development/Framework/Edventurous/build/Release/libEdventurous-OSX.a",
-					"-ObjC",
+					"EdventurousFramework/build/Release/libEdventurous-OSX.a",
 				);
 				PRODUCT_NAME = BattleMinute;
 			};
@@ -362,20 +358,16 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "Frameworks/**";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BattleMinute_Prefix.pch;
-				HEADER_SEARCH_PATHS = "/Users/jeremy/Development/Framework/Edventurous/Classes/**";
+				HEADER_SEARCH_PATHS = "EdventurousFramework/Classes/**";
 				INFOPLIST_FILE = "BattleMinute-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
 					"-force_load",
-					"/Users/jeremy/Development/Framework/Edventurous/build/Release/libEdventurous-OSX.a",
-					"-ObjC",
+					"EdventurousFramework/build/Release/libEdventurous-OSX.a",
 				);
 				PRODUCT_NAME = BattleMinute;
 			};
