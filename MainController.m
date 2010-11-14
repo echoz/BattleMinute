@@ -105,25 +105,25 @@
 	int modifier = 0;
 	BOOL process = 0;
 
-	for (int i=0;i<maxWeeks+1;i++) {
+	for (int i=1;i<maxWeeks+2;i++) {
 		offset = [[NSDateComponents alloc] init];
-		[offset setDay:i*7];
+		[offset setDay:(i-1)*7];
 		currentWeekDate = [calendar dateByAddingComponents:offset toDate:baseStartDate options:0];
 		[progressProgressIndicator incrementBy:1];
 		 
 		if (![self date:currentWeekDate isBetweenDate:recessStartDate andDate:recessEndDate]) {
-			[progressDescription setStringValue:[NSString stringWithFormat:@"Working on week %i",i+1-modifier]];
+			[progressDescription setStringValue:[NSString stringWithFormat:@"Working on week %i",i-modifier]];
 			for (JONTUCourse *cse in [sem courses]) {
 				for (JONTUClass *cls in [cse classes]) {
 					
 					if ([[cls activeWeeks] count] < maxWeeks) {
-						if (i < [[cls activeWeeks] count]) {
-							process = [[[cls activeWeeks] objectAtIndex:i-modifier] boolValue];	
+						if (i-2 < [[cls activeWeeks] count]) {
+							process = [[[cls activeWeeks] objectAtIndex:i-1-modifier] boolValue];	
 						} else {
 							process = NO;
 						}
 					} else {
-						process = [[[cls activeWeeks] objectAtIndex:i-modifier] boolValue];
+						process = [[[cls activeWeeks] objectAtIndex:i-1-modifier] boolValue];
 					}
 					
 					if (process) {
@@ -160,9 +160,8 @@
 	
 		[offset release], offset = nil;
 	}
-	[self dismissSheet:progressWindow sender:nil];
-	
 	[[CalCalendarStore defaultCalendarStore] saveCalendar:cal error:nil];
+	[self dismissSheet:progressWindow sender:nil];	
 	
 }
 
