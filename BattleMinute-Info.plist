@@ -17,23 +17,29 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.3</string>
+	<string>1.0.4</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>5</string>
+	<string>8</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
-	<key>SUPublicDSAKeyFile</key>
-	<string>dsa_pub.pem</string>
-	<key>SUFeedURL</key>
-	<string>http://echoz.github.com/BattleMinute/appcast.xml</string>
-	<key>NSHumanReadableCopyright</key>
-	<string>Copyright 2010 Jeremy Foo</string>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
+	<key>SUScheduledCheckInterval</key>
+	<string>18000</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
+	<key>SUAllowsAutomaticUpdates</key>
+	<true/>
+	<key>SUEnableSystemProfiling</key>
+	<true/>
+	<key>SUFeedURL</key>
+	<string>http://appcast.ornyx.net/?appcast&amp;appName=BattleMinute</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright 2010-2011 Jeremy Foo</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>
