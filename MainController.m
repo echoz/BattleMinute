@@ -118,12 +118,12 @@
 					
 					if ([[cls activeWeeks] count] < maxWeeks) {
 						if (i-2 < [[cls activeWeeks] count]) {
-							process = [[[cls activeWeeks] objectAtIndex:i-1-modifier] boolValue];	
+							process = [cls isActiveForWeek:i-modifier];
 						} else {
 							process = NO;
 						}
 					} else {
-						process = [[[cls activeWeeks] objectAtIndex:i-1-modifier] boolValue];
+						process = [cls isActiveForWeek:i-modifier];
 					}
 					
 					if (process) {
@@ -270,7 +270,7 @@
 -(IBAction)getSemesters:(id)sender {
 
 	NSString *loginpasswd = [loginPassword stringValue];
-	
+	NSString *loginuser = [loginUser stringValue];
 	[loginButton setEnabled:NO];
 	[loginCancelButton setEnabled:NO];
 	[loginUser setEnabled:NO];
@@ -281,8 +281,9 @@
 	
 	NSOperationQueue *queue = [[NSOperationQueue alloc] init];
 	NSBlockOperation *blockop = [NSBlockOperation blockOperationWithBlock:^{
-		NSArray *test = [[JONTUSemester listSemestersOfUser:[loginUser stringValue] password:loginpasswd domain:@"STUDENT" parseImmediately:YES] retain];
-		
+
+		NSArray *test = [[JONTUSemester listSemestersOfUser:loginuser password:loginpasswd domain:@"STUDENT" parseImmediately:YES] retain];
+
 		if (test) {
 			[self dismissSheet:loginWindow sender:sender];
 						
