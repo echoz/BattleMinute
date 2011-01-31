@@ -6,12 +6,12 @@
       <description>Latest update to BattleMinute</description>
       <language>en</language>
       <item>
-         <title>Version 1.0.3 (1 bugs fixed; 0 new features)</title>
+         <title>Version 1.0.4 (1 bugs fixed; 0 new features)</title>
 						<sparkle:releaseNotesLink>
-							http://echoz.github.com/BattleMinute/1.0.3.html
+							http://echoz.github.com/BattleMinute/1.0.4.html
 						</sparkle:releaseNotesLink>
          <pubDate>Sun, 14 Nov 2010 13:57:11 +0800</pubDate>
-         <enclosure url="https://github.com/downloads/echoz/BattleMinute/BattleMinute1.0.3.zip" sparkle:shortVersionString="1.0.3" sparkle:version="5" length="620505" type="application/octet-stream" sparkle:dsaSignature="MCwCFBl+pthYlVq03wqTD/oh8D1Zog+tAhQD+pjkDhYJS/MNgNwJowlSRLsxSQ==" />
+         <enclosure url="https://github.com/downloads/echoz/BattleMinute/BattleMinute1.0.4.zip" sparkle:shortVersionString="1.0.4" sparkle:version="8" length="713047" type="application/octet-stream" sparkle:dsaSignature="MC4CFQCK/EtbHvYmVhoKwWCaa2jVkHpr4gIVAJ3Q+gHCh3x/0g56LKe86/FMWCa0" />
       </item>
 
    </channel>
