@@ -15,6 +15,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	// Insert code here to initialize your application 
 	[sparkle setSendsSystemProfile:YES];
+	[sparkle setAutomaticallyChecksForUpdates:YES];
 }
 
 -(NSString *)installationId {
