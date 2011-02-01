@@ -74,6 +74,22 @@
 }
 
 -(void)exportSemester:(JONTUSemester *)sem toCalendar:(CalCalendar *)cal usingDates:(NSDictionary *)dates {
+	
+	//******** course details stuff ***********//
+	
+	[progressDescription setStringValue:@"Retriving extra course information"];
+	[progressProgressIndicator setMaxValue:[[sem courses] count]];
+	[progressProgressIndicator setIndeterminate:NO];
+	[progressProgressIndicator setDoubleValue:0.0];
+	
+	for (JONTUCourse *cse in [sem courses]) {
+		[cse parse];
+		[progressProgressIndicator incrementBy:1];
+	}
+	
+	
+	//******** calendar stuff ***********//
+	
 	// basic assumptions.
 	// - school always starts on a monday.
 	// - recess is for a week if not otherwise stated
@@ -86,6 +102,7 @@
 	NSUInteger maxWeeks = [self maxWeeksForSemester:sem];
 	[progressProgressIndicator setMaxValue:maxWeeks+1];
 	[progressProgressIndicator setIndeterminate:NO];
+	[progressProgressIndicator setDoubleValue:0.0];	
 	
 	NSCalendar *calendar = [NSCalendar currentCalendar];
 	NSDate *baseStartDate = [dates objectForKey:@"SEM_START"];
@@ -129,7 +146,7 @@
 					if (process) {
 						CalEvent *event = [CalEvent event];
 						event.calendar = cal;
-						event.title = [NSString stringWithFormat:@"%@ %@", [cse name], [cls type]];
+						event.title = [NSString stringWithFormat:@"%@: %@ %@", [cse name], [cse title], [cls type]];
 						event.location = [cls venue];
 						event.notes = [NSString stringWithFormat:@"%i AU %@ %@\nStatus: %@\n\nIndex: %@\nGroup: %@\nRemark: %@",[cse au], [cse type], [cse gepre], [cse status], [cse index], [cls group], [cls remark]];
 						
