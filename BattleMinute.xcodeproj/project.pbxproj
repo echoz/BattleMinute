@@ -13,7 +13,7 @@
 		3F10B99712367E5D0084B7E6 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 3F10B98712367E360084B7E6 /* Sparkle.framework */; };
 		3F10B99C12367FFD0084B7E6 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 3F10B99B12367FFD0084B7E6 /* dsa_pub.pem */; };
 		3F41402712336EC900CB5E2C /* CalendarStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F41402612336EC900CB5E2C /* CalendarStore.framework */; };
-		3F6B170012566E7C00BE45A1 /* libEdventurous-OSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F6B16FB12566E6000BE45A1 /* libEdventurous-OSX.a */; };
+		3F7357F513B97FA60010C888 /* libEdventurous-OSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7357F413B97FA60010C888 /* libEdventurous-OSX.a */; };
 		3F79C98912280467009F9DD7 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F79C98812280467009F9DD7 /* MainController.m */; };
 		3F8C7C8012F6C9E400473B21 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F8C7C7F12F6C9E400473B21 /* libxml2.dylib */; };
 		3F8C7C8212F6C9E600473B21 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F8C7C8112F6C9E600473B21 /* CoreLocation.framework */; };
@@ -83,6 +83,7 @@
 		3F10B99B12367FFD0084B7E6 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		3F41402612336EC900CB5E2C /* CalendarStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CalendarStore.framework; path = System/Library/Frameworks/CalendarStore.framework; sourceTree = SDKROOT; };
 		3F6B16EE12566E6000BE45A1 /* Edventurous.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Edventurous.xcodeproj; path = EdventurousFramework/Edventurous.xcodeproj; sourceTree = "<group>"; };
+		3F7357F413B97FA60010C888 /* libEdventurous-OSX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libEdventurous-OSX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F79C98712280467009F9DD7 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		3F79C98812280467009F9DD7 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
 		3F8C7C7F12F6C9E400473B21 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -97,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F6B170012566E7C00BE45A1 /* libEdventurous-OSX.a in Frameworks */,
+				3F7357F513B97FA60010C888 /* libEdventurous-OSX.a in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				3FB121E2120D9DD400B10CDF /* libicucore.dylib in Frameworks */,
 				3F41402712336EC900CB5E2C /* CalendarStore.framework in Frameworks */,
@@ -185,6 +186,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3F7357F413B97FA60010C888 /* libEdventurous-OSX.a */,
 				3F8C7C7F12F6C9E400473B21 /* libxml2.dylib */,
 				3F8C7C8112F6C9E600473B21 /* CoreLocation.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
@@ -354,9 +356,13 @@
 				HEADER_SEARCH_PATHS = "EdventurousFramework/Classes/**";
 				INFOPLIST_FILE = "BattleMinute-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/BattleMinute-eyiqppmpormopydmlshsjqkqplwn/Build/Products/Debug\"",
+				);
 				OTHER_LDFLAGS = (
 					"-force_load",
-					"EdventurousFramework/build/${BUILD_STYLE}/libEdventurous-OSX.a",
+					"${BUILT_PRODUCTS_DIR}/libEdventurous-OSX.a",
 				);
 				PRODUCT_NAME = BattleMinute;
 			};
@@ -376,9 +382,13 @@
 				HEADER_SEARCH_PATHS = "EdventurousFramework/Classes/**";
 				INFOPLIST_FILE = "BattleMinute-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/BattleMinute-eyiqppmpormopydmlshsjqkqplwn/Build/Products/Debug\"",
+				);
 				OTHER_LDFLAGS = (
 					"-force_load",
-					"EdventurousFramework/build/${BUILD_STYLE}/libEdventurous-OSX.a",
+					"${BUILT_PRODUCTS_DIR}/libEdventurous-OSX.a",
 				);
 				PRODUCT_NAME = BattleMinute;
 			};

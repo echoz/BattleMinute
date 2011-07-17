@@ -55,10 +55,14 @@
 	for (JONTUCourse *cse in [sem courses]) {
 		for (JONTUClass *cls in [cse classes]) {
 			if ([[cls activeWeeks] count] > max) {
+                NSLog(@"%lu", [[cls activeWeeks] count]);
 				max = [[cls activeWeeks] count];
 			}
 		}
 	}
+    
+    NSLog(@"%lu", max);
+    
 	return max;
 }
 
@@ -77,7 +81,7 @@
 	
 	//******** course details stuff ***********//
 	
-	[progressDescription setStringValue:@"Retriving extra course information"];
+	[progressDescription setStringValue:@"Retriving extra course information..."];
 	[progressProgressIndicator setMaxValue:[[sem courses] count]];
 	[progressProgressIndicator setIndeterminate:NO];
 	[progressProgressIndicator setDoubleValue:0.0];
@@ -119,17 +123,17 @@
 	
 	NSDateComponents *offset = nil;
 	NSDate *currentWeekDate = nil;
-	int modifier = 0;
+	NSUInteger modifier = 0;
 	BOOL process = 0;
 
-	for (int i=1;i<maxWeeks+2;i++) {
+	for (NSUInteger i=1;i<maxWeeks+2;i++) {
 		offset = [[NSDateComponents alloc] init];
 		[offset setDay:(i-1)*7];
 		currentWeekDate = [calendar dateByAddingComponents:offset toDate:baseStartDate options:0];
 		[progressProgressIndicator incrementBy:1];
 		 
 		if (![self date:currentWeekDate isBetweenDate:recessStartDate andDate:recessEndDate]) {
-			[progressDescription setStringValue:[NSString stringWithFormat:@"Working on week %i",i-modifier]];
+			[progressDescription setStringValue:[NSString stringWithFormat:@"Working on week %lu...",i-modifier]];
 			for (JONTUCourse *cse in [sem courses]) {
 				for (JONTUClass *cls in [cse classes]) {
 					
@@ -146,22 +150,22 @@
 					if (process) {
 						CalEvent *event = [CalEvent event];
 						event.calendar = cal;
-						event.title = [NSString stringWithFormat:@"%@: %@ %@", [cse name], [cse title], [cls type]];
+						event.title = [NSString stringWithFormat:@"%@ %@", [cse name], [cls type]];
 						event.location = [cls venue];
-						event.notes = [NSString stringWithFormat:@"%i AU %@ %@\nStatus: %@\n\nIndex: %@\nGroup: %@\nRemark: %@",[cse au], [cse type], [cse gepre], [cse status], [cse index], [cls group], [cls remark]];
+						event.notes = [NSString stringWithFormat:@"%@\n\n%i AU %@ %@\nStatus: %@\n\nIndex: %@\nGroup: %@\nRemark: %@",[cse title], [cse au], [cse type], [cse gepre], [cse status], [cse index], [cls group], [cls remark]];
 						
 						NSDateComponents *tmpoffset;
 						
-						tmpoffset = [cls fromTime];
-						[tmpoffset setDay:[tmpoffset weekday]];
-						[tmpoffset setWeekday:0];
+						tmpoffset = [cls fromTime];    
+                        [tmpoffset setWeekday:0];
+                        [tmpoffset setDay:[cls dayIndex]];
 						
 						event.startDate = [calendar dateByAddingComponents:tmpoffset toDate:currentWeekDate options:0];
 
 						tmpoffset = [cls toTime];
-						[tmpoffset setDay:[tmpoffset weekday]];
-						[tmpoffset setWeekday:0];
-
+                        [tmpoffset setWeekday:0];
+                        [tmpoffset setDay:[cls dayIndex]];
+                        
 						event.endDate = [calendar dateByAddingComponents:tmpoffset toDate:currentWeekDate options:0];
 
 						[[CalCalendarStore defaultCalendarStore] saveEvent:event span:CalSpanThisEvent error:nil];						
@@ -169,6 +173,7 @@
 					
 				}
 			}
+            
 		} else {
 			[progressDescription setStringValue:@"Working on Recess Week"];
 

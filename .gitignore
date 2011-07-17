@@ -5,6 +5,8 @@ build/revision
 *.xcodeproj/*.perspectivev3
 *.xcodeproj/*.mode1v3
 *.xcodeproj/*.tm_build_errors
+*.xcodeproj/*.xcworkspace
+*.xcodeproj/xcuserdata
 *.tmproj
 *.1
 *.pem
